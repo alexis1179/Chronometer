@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('Roboto/Roboto-Regular.ttf');
+}
+
+:root{
+    font-size: 16px;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+    background-color: rgb(16, 17, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20%;
+    padding: 2% 10%;
+    display: flex;
+    align-items: center;
+    border-radius: 5%;
+    margin: 10px 0;
+}
+
+.h1{
+    font-family: 'Roboto-Regular';
+    font-size: 3rem;
+    margin: 0 20px;
+}
+
+.timer{
+    margin: 2rem;
+    display: flex;
+}
+
+.timer span{
+    font-size: 5rem;
+    font-family: 'Roboto-Regular';
+    color: rgb(255, 255, 255);
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.actions button{
+    margin: 30px 30px;
+    width: 180px;
+    height: 80px;
+    font-size: 2.5rem;
+    position: relative;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    font-family: 'Roboto-Regular';
+    cursor: pointer;
+}
+
+.actions .btn::before,
+.actions .btn::after{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    border-style: solid;
+    transition: 0.5s ease-in-out;
+}
+
+.actions .btn::before{
+    top: -20%;
+    left: -10%;
+    border-width: 5px 0px 0px 5px;
+}
+
+.actions .btn::after{
+    bottom: -20%;
+    right: -10%;
+    border-width: 0px 5px 5px 0px;
+
+}
+
+
+.actions .btn.start{
+    border: 5px rgb(29, 154, 48) solid;
+    color: rgb(29, 154, 48);
+}
+.actions .btn.start::before, .actions .btn.start::after{
+    border-color: rgb(29, 154, 48);
+}
+.actions .btn.start:hover{
+    background-color: rgb(29, 154, 48);
+    color: rgb(255, 255, 255);
+}
+
+.actions .btn.stop{
+    border: 5px rgb(231, 12, 12) solid;
+    color: rgb(231, 12, 12);
+}
+.actions .btn.stop::before, .actions .btn.stop::after{
+    border-color: rgb(231, 12, 12);
+}
+.actions .btn.stop:hover{
+    background-color: rgb(231, 12, 12);
+    color: rgb(255, 255, 255);
+}
+
+.actions .btn.reset{
+    border: 5px rgb(233, 229, 41) solid;
+    color: rgb(233, 229, 41);
+}
+.actions .btn.reset::before, .actions .btn.reset::after{
+    border-color: rgb(233, 229, 41);
+}
+.actions .btn.reset:hover{
+    background-color: rgb(233, 229, 41);
+    color: rgb(255, 255, 255);
+}
+
+.actions .btn:hover::before,
+.actions .btn:hover::after{
+    width: 117%;
+    height: 130%;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .actions{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html{
+        height: max-content;
+    }
+    .title{
+        flex-direction: column;
+    }
+
+    .title .h1{
+        font-size: 2rem;
+    }
+
+    .timer .img{
+        width: 80px;
+    }
+    .timer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
